@@ -72,7 +72,13 @@
       "unitTestRunner": "jest"
     },
     "@nx/angular:component": {
-      "style": "scss"
+      "style": "scss",
+      "changeDetection": "OnPush",
+      "displayBlock": true,
+      "standalone": true,
+      "inlineTemplate": true,
+      "inlineStyle": true
+
     }
   },
   "defaultProject": "qabot-app"
