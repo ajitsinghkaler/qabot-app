@@ -9,11 +9,13 @@ import { importProvidersFrom } from '@angular/core';
 import { environment } from './environments/environment';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
     importProvidersFrom(
+      BrowserAnimationsModule,
       HttpClientModule,
       AuthModule.forRoot({
         ...environment.auth0,

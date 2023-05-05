@@ -1,24 +1,29 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AuthService } from '@auth0/auth0-angular';
+// import { AuthService } from '@auth0/auth0-angular';
 import { AsyncPipe, NgIf } from '@angular/common';
+// import { SigninComponent } from './components/signin/signin.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   standalone: true,
-  imports: [
-    AsyncPipe,
-    NgIf,
-    RouterOutlet
-  ],
+  imports: [AsyncPipe, NgIf, RouterOutlet, HeaderComponent],
   selector: 'qabot-app-root',
-  template: ` <router-outlet></router-outlet>
-  <div>123</div>
+  template: `
+    <!-- <qabot-app-header> -->
+      <!-- <div>123</div>
+    <qabot-app-signin></qabot-app-signin>
     <ul *ngIf="auth.user$ | async as user">
       <li>{{ user.name }}</li>
       <li>{{ user.email }}</li>
-      <li>{{auth.isAuthenticated$|async}}</li>
-    </ul>
-    `,
+      <li>{{ auth.isAuthenticated$ | async }}</li>
+    </ul> -->
+    <!-- </qabot-app-header> -->
+    <router-outlet >
+    <qabot-app-header/>
+
+    </router-outlet>
+  `,
   styles: [
     `
       :host {
@@ -30,5 +35,5 @@ import { AsyncPipe, NgIf } from '@angular/common';
 })
 export class AppComponent {
   title = 'qabot-app';
-  auth = inject(AuthService);
+  // auth = inject(AuthService);
 }

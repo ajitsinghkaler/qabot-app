@@ -1,11 +1,15 @@
 import { Route } from '@angular/router';
+import { AppComponent } from './app.component';
 
 export const appRoutes: Route[] = [
   {
-    path: 'home',
-    loadComponent: () =>
-      import('./components/home/home.component').then(
-        (mod) => mod.HomeComponent
-      ),
-  },
+    // path: '',
+    // component: AppComponent,
+    // children: [
+      // {
+        path: 'home',
+        loadComponent: () => import('./components/home/home.component'),
+      // },
+    // ],
+  }
 ];
