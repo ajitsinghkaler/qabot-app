@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {  } from '@angular/common';
 
 @Component({
-  selector: 'qabot-app-home',
+  selector: 'qabot-app-chatbot-list',
   standalone: true,
-  imports: [CommonModule],
-  template: `<p>home works!</p>`,
+  imports: [],
+  template: `<p>chatbot-list works!</p>`,
   styles: [
     `
       :host {
@@ -15,4 +15,4 @@ import { CommonModule } from '@angular/common';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class HomeComponent {}
+export class ChatbotListComponent {}

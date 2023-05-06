@@ -1,17 +1,18 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 // import { AuthService } from '@auth0/auth0-angular';
-import { AsyncPipe, NgIf } from '@angular/common';
+// import { AsyncPipe, NgIf } from '@angular/common';
 // import { SigninComponent } from './components/signin/signin.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   standalone: true,
-  imports: [AsyncPipe, NgIf, RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   selector: 'qabot-app-root',
   template: `
     <!-- <qabot-app-header> -->
-      <!-- <div>123</div>
+    <!-- <div>123</div>
     <qabot-app-signin></qabot-app-signin>
     <ul *ngIf="auth.user$ | async as user">
       <li>{{ user.name }}</li>
@@ -19,10 +20,10 @@ import { HeaderComponent } from './components/header/header.component';
       <li>{{ auth.isAuthenticated$ | async }}</li>
     </ul> -->
     <!-- </qabot-app-header> -->
-    <router-outlet >
-    <qabot-app-header/>
-
-    </router-outlet>
+    <qabot-app-header />
+    <router-outlet>
+      </router-outlet>
+      <qabot-app-footer></qabot-app-footer>
   `,
   styles: [
     `

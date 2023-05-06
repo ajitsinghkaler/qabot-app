@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'qabot-app-signup',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `<p>signup works!</p>
     <button class="button__sign-up" (click)="handleSignUp()">Sign Up</button> `,
   styles: [
