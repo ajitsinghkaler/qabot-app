@@ -1,0 +1,22 @@
+[
+    {
+        "question":"What is qabot?",
+        "answer":"Qabot is a chatbot that can help you to find the best answer for your question."
+    },
+    {
+        "question": "What tyoe of files are supported?",
+        "answer": "It supports all kinds of files pdf, docx, html, txt, etc."
+    },
+    {
+        "question": "Is my data secure?",
+        "answer": "Yes, your data is secure. We store all data in S3 with encryption."
+    },
+    {
+        "question": "Can I contact for support?",
+        "answer": "Yes, please fill the contact form and we will get back to you."
+    },
+    {
+        "question":"Can I get a refund for my subscription?",
+        "answer":"Yes, you can get a refund for your subscription within 10 days of purchase."
+    }
+]
