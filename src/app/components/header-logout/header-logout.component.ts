@@ -24,7 +24,7 @@ import { AuthService } from '@auth0/auth0-angular';
         <div class="flex">
           <div class="flex items-center lg:order-2">
             <button
-              (click)="handleLogin()"
+              (click)="auth.loginWithRedirect({appState:{target: '/chatbot/history'}})"
               class="border-slate-200 border text-gray-900 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
             >
               Log in
@@ -114,8 +114,4 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class HeaderLogoutComponent {
   auth = inject(AuthService);
-
-  handleLogin(): void {
-    this.auth.loginWithRedirect();
-  }
 }

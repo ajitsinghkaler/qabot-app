@@ -7,20 +7,18 @@ import { appRoutes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { importProvidersFrom } from '@angular/core';
 import { environment } from './environments/environment';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi  } from '@angular/common/http';
 import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
     importProvidersFrom(
       BrowserAnimationsModule,
-      HttpClientModule,
       AuthModule.forRoot({
         ...environment.auth0,
         httpInterceptor: {
-          allowedList: [`${environment.API_SERVER_URL}/api/*`],
+          allowedList: [`${environment.API_SERVER_URL}/*`],
         },
       })
     ),
@@ -29,5 +27,7 @@ bootstrapApplication(AppComponent, {
       useClass: AuthHttpInterceptor,
       multi: true,
     },
+    provideHttpClient(withInterceptorsFromDi()),
+    provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
   ],
 }).catch((err) => console.error(err));

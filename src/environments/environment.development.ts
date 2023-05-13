@@ -1,5 +1,5 @@
 export const environment = {
-  API_SERVER_URL: 'http://localhost:8000',
+  API_SERVER_URL: 'http://localhost:8000/api',
   auth0: {
     domain: 'qabot.uk.auth0.com',
     clientId: 'ntCEz6jqRoVbequa3a2Qgk57xF2w8LMt',

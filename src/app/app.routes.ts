@@ -1,4 +1,6 @@
 import { Route } from '@angular/router';
+import { AuthGuard } from '@auth0/auth0-angular';
+
 
 export const appRoutes: Route[] = [
   {
@@ -21,6 +23,7 @@ export const appRoutes: Route[] = [
       import('./components/login-shell/login-shell.component').then(
         (m) => m.LoginShellComponent
       ),
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: '',

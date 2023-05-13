@@ -1,10 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { UploadFileComponent } from '../../components/upload-file/upload-file.component';
+import { ChatbotListComponent } from '../../components/chatbot-list/chatbot-list.component';
 
 @Component({
   selector: 'qabot-app-chatbot-page',
   standalone: true,
-  imports: [],
-  template: `<p>chatbot-page works!</p>`,
+  template: `
+    <qabot-app-upload-file />
+    <qabot-app-chatbot-list />
+  `,
   styles: [
     `
       :host {
@@ -13,5 +17,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     `,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [UploadFileComponent, ChatbotListComponent],
 })
 export class ChatbotPageComponent {}

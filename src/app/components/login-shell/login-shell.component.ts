@@ -5,13 +5,14 @@ import { RouterOutlet } from '@angular/router';
   selector: 'qabot-app-login-shell',
   standalone: true,
   imports: [RouterOutlet],
-  template: `<p>login-shell works!</p>
+  template: `
   <router-outlet></router-outlet>
   `,
   styles: [
     ` 
       :host {
         display: block;
+        min-height: 75vh;
       }
     `,
   ],

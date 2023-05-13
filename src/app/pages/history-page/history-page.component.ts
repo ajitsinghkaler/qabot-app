@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { HistoryListComponent } from '../../components/history-list/history-list.component';
 
 @Component({
   selector: 'qabot-app-history-page',
   standalone: true,
-  imports: [],
-  template: `<p>history-page works!</p>`,
+  template: `<p>history-page works!</p>
+    <qabot-app-history-list />`,
   styles: [
     `
       :host {
@@ -13,5 +14,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     `,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [HistoryListComponent],
 })
 export class HistoryPageComponent {}
