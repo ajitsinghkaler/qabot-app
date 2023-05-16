@@ -21,8 +21,8 @@ import { FooterComponent } from './components/footer/footer.component';
       <li>{{ auth.isAuthenticated$ | async }}</li>
     </ul> -->
     <!-- </qabot-app-header> -->
-    <!-- <button class="button__logout" (click)="handleLogout()">Log Out</button>
-    {{this.auth.isAuthenticated$ | async}} -->
+    <button class="button__logout" (click)="handleLogout()">Log Out</button>
+    <!-- {{this.auth.isAuthenticated$ | async}} -->
     <!-- <qabot-app-signin></qabot-app-signin> -->
     
     <qabot-app-header />

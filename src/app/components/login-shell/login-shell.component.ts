@@ -12,7 +12,8 @@ import { RouterOutlet } from '@angular/router';
     ` 
       :host {
         display: block;
-        min-height: 75vh;
+        min-height: 80vh;
+        margin-top: 1rem;
       }
     `,
   ],

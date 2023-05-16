@@ -14,6 +14,7 @@ import { tap } from 'rxjs';
     <ng-template #logout>
       <qabot-app-header-logout />
     </ng-template>
+    
   `,
   styles: [
     `

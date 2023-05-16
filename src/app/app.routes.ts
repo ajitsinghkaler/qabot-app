@@ -1,7 +1,6 @@
 import { Route } from '@angular/router';
 import { AuthGuard } from '@auth0/auth0-angular';
 
-
 export const appRoutes: Route[] = [
   {
     path: '',
@@ -37,8 +36,15 @@ export const appRoutes: Route[] = [
         loadComponent: () =>
           import('./pages/history-page/history-page.component').then(
             (m) => m.HistoryPageComponent
-          )
-      }
+          ),
+      },
+      {
+        path: ':id',
+        loadComponent: () =>
+          import('./pages/chat-page/chat-page.component').then(
+            (m) => m.ChatPageComponent
+          ),
+      },
     ],
   },
 ];

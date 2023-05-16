@@ -16,26 +16,26 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           <li>
             <a
               href="#"
-              class="mr-4 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
+              class="mr-4 text-sm text-gray-500 hover:underline md:mr-6"
               >About</a
             >
           </li>
           <li>
             <a
               href="#"
-              class="mr-4 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
+              class="mr-4 text-sm text-gray-500 hover:underline md:mr-6"
               >Privacy Policy</a
             >
           </li>
           <li>
             <a
               href="#"
-              class="text-sm text-gray-500 hover:underline dark:text-gray-400"
+              class="text-sm text-gray-500 hover:underline"
               >Contact</a
             >
           </li>
         </ul>
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400 mt-3 sm:mt-0"
+        <span class="text-sm text-gray-500 sm:text-center mt-3 sm:mt-0"
           >© 2023
           <a href="https://flowbite.com" class="hover:underline" target="_blank"
             >Qabot</a
