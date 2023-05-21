@@ -20,6 +20,7 @@ import { tap } from 'rxjs';
     `
       :host {
         display: block;
+        margin-bottom: 1rem;
       }
     `,
   ],

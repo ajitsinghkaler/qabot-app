@@ -11,15 +11,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       <footer
         class="p-4 bg-white rounded-lg flex items-center justify-between p-6 flex-col sm:flex-row"
       >
-        
         <ul class="flex flex-wrap items-center">
-          <li>
-            <a
-              href="#"
-              class="mr-4 text-sm text-gray-500 hover:underline md:mr-6"
-              >About</a
-            >
-          </li>
           <li>
             <a
               href="#"
@@ -28,9 +20,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
             >
           </li>
           <li>
-            <a
-              href="#"
-              class="text-sm text-gray-500 hover:underline"
+            <a href="#" class="text-sm text-gray-500 hover:underline"
               >Contact</a
             >
           </li>

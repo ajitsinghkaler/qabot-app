@@ -1,22 +1,23 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderLoginComponent } from "../header-login/header-login.component";
 
 @Component({
-  selector: 'qabot-app-login-shell',
-  standalone: true,
-  imports: [RouterOutlet],
-  template: `
+    selector: 'qabot-app-login-shell',
+    standalone: true,
+    template: `
+  <qabot-app-header-login/>
   <router-outlet></router-outlet>
   `,
-  styles: [
-    ` 
+    styles: [
+        ` 
       :host {
         display: block;
         min-height: 80vh;
-        margin-top: 1rem;
       }
     `,
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [RouterOutlet, HeaderLoginComponent]
 })
 export class LoginShellComponent {}

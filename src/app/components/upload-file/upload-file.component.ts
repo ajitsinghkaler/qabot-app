@@ -10,7 +10,7 @@ import { UploadFileService } from './upload-file.service';
   template: `<!-- component -->
 
     <!-- This is an example component -->
-    <div class="max-w-2xl mx-auto mt-20">
+    <div class="max-w-3xl mx-auto mt-20">
       <div class="flex items-center justify-center w-full">
         <label
           for="dropzone-file"
@@ -66,7 +66,6 @@ export class UploadFileComponent {
     for (const file of files) {
       formData.append('file', file);
     }
-    formData.append('owner', "1");
     this.uploadFileService.uploadFile(formData).subscribe();
   }
 }

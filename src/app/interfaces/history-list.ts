@@ -1,4 +1,5 @@
-export interface HistoryList{
-    status: string;
-    history: string[];
+export interface HistoryList {
+  id: string;
+  sender: number;
+  title: string;
 }

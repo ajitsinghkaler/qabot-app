@@ -11,6 +11,6 @@ export class HistoryListService {
   http = inject(HttpClient);
 
   getHistoryList() {
-    return this.http.get<HistoryList>(environment.API_SERVER_URL + '/chat_messages/history');
+    return this.http.get<HistoryList[]>(environment.API_SERVER_URL + '/chat_messages');
   }
 }
