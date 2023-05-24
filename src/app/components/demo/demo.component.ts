@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'qabot-app-demo',
   standalone: true,
-  imports: [],
   template: `
   <div class="py-20 bg-gray-50">
   <div class="container mx-auto px-6 md:px-12 xl:px-32">

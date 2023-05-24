@@ -5,16 +5,25 @@ export const appRoutes: Route[] = [
   {
     path: '',
     loadComponent: () =>
-      import('./pages/home-page/home-page.component').then(
-        (m) => m.HomePageComponent
+      import('./components/logout-shell/logout-shell.component').then(
+        (m) => m.LogoutShellComponent
       ),
-  },
-  {
-    path: 'pricing',
-    loadComponent: () =>
-      import('./components/pricing/pricing.component').then(
-        (m) => m.PricingComponent
-      ),
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./pages/home-page/home-page.component').then(
+            (m) => m.HomePageComponent
+          ),
+      },
+      {
+        path: 'pricing',
+        loadComponent: () =>
+          import('./components/pricing/pricing.component').then(
+            (m) => m.PricingComponent
+          ),
+      },
+    ],
   },
   {
     path: 'chatbot',
@@ -39,7 +48,7 @@ export const appRoutes: Route[] = [
           ),
       },
       {
-        path: ':id',
+        path: ':id/:name',
         loadComponent: () =>
           import('./pages/chat-page/chat-page.component').then(
             (m) => m.ChatPageComponent

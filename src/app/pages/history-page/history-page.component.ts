@@ -4,8 +4,8 @@ import { HistoryListComponent } from '../../components/history-list/history-list
 @Component({
   selector: 'qabot-app-history-page',
   standalone: true,
-  template: `<p>history-page works!</p>
-    <qabot-app-history-list />`,
+  template: `
+    <qabot-app-history-list class="container mx-auto px-4" />`,
   styles: [
     `
       :host {

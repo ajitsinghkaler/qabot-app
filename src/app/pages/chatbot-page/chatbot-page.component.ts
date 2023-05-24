@@ -7,7 +7,7 @@ import { ChatbotListComponent } from '../../components/chatbot-list/chatbot-list
   standalone: true,
   template: `
     <qabot-app-upload-file class="px-4"/>
-    <qabot-app-chatbot-list />
+    <qabot-app-chatbot-list class="px-4"/>
   `,
   styles: [
     `

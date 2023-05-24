@@ -3,11 +3,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'qabot-app-footer',
   standalone: true,
-  imports: [],
   template: `
     <!-- component -->
     <!-- This is an example component -->
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-[1080px] mx-auto">
       <footer
         class="p-4 bg-white rounded-lg flex items-center justify-between p-6 flex-col sm:flex-row"
       >

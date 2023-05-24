@@ -14,6 +14,8 @@ import { HeaderLoginComponent } from "../header-login/header-login.component";
       :host {
         display: block;
         min-height: 80vh;
+        max-width: 1080px;
+        margin: 0 auto;
       }
     `,
     ],

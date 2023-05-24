@@ -32,6 +32,8 @@ import { FooterComponent } from './components/footer/footer.component';
     `
       :host {
         display: block;
+        /* max-width: 1080px;
+        margin: 0 auto; */
       }
     `,
   ],

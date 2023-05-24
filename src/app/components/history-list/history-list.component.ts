@@ -1,27 +1,33 @@
-import { NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LetDirective } from '@rx-angular/template/let';
 import { HistoryListService } from './history-list.service';
 import { RouterLink } from '@angular/router';
+import { RxFor } from '@rx-angular/template/for';
+import { fromNow } from 'src/app/utils/dateago';
 
 @Component({
   selector: 'qabot-app-history-list',
   standalone: true,
-  imports: [LetDirective, NgFor, NgIf, RouterLink],
+  imports: [NgIf, RouterLink, RxFor, DatePipe],
   providers: [HistoryListService],
   template: `
-  <h3>History List</h3>
-    <ng-container *rxLet="historyList$; let historyList">
-      <!-- {{historyList}} -->
-      <div routerLink="/chatbot/{{history.id}}" *ngFor="let history of historyList">
-        {{history.title}}
-        <!-- <pre>{{historys.length}}</pre> -->
-        <!-- Count = {{count}} -->
-      </div>
-      <div class="text-center mt-10" *ngIf="!historyList.length">
+    <h2 class="text-slate-900 text-4xl font-bold sm:text-5xl sm:mt-10 mt-8 sm:mb-8 mb-4 ">Conversations</h2>
+    <div
+      routerLink="/chatbot/{{ history.id }}/{{history.title}}"
+      *rxFor="let history of historyList$; trackBy: 'id'; let count = count"
+      class="flex justify-between border border-gray-200 rounded mx-auto shadow-md px-4 py-2 mb-4 bg-white hover:bg-sky-100 hover:text-sky-900 transition-all duration-300 ease-in-out"
+    >
+      <div class="text-center mt-10" *ngIf="count === 0">
         No history present upload a document and chat with it to create history
       </div>
-    </ng-container>`,
+      {{ history.title }}
+      <div>
+        {{ fromNow(history.created) }}
+        <button class="ml-4">Delete</button>
+      </div>
+    </div>
+  `,
   styles: [
     `
       :host {
@@ -33,8 +39,6 @@ import { RouterLink } from '@angular/router';
 })
 export class HistoryListComponent {
   historyService = inject(HistoryListService);
-
   historyList$ = this.historyService.getHistoryList();
-
-
+  fromNow = fromNow;
 }

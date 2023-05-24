@@ -1,16 +1,14 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { UploadFileService } from './upload-file.service';
-// import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'qabot-app-upload-file',
   standalone: true,
   providers: [UploadFileService],
-  // imports: [CommonModule],
   template: `<!-- component -->
 
     <!-- This is an example component -->
-    <div class="max-w-3xl mx-auto mt-20">
+    <div class=" mx-auto mt-20">
       <div class="flex items-center justify-center w-full">
         <label
           for="dropzone-file"

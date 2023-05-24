@@ -4,12 +4,11 @@ import { AuthService } from '@auth0/auth0-angular';
 @Component({
   selector: 'qabot-app-header-login',
   standalone: true,
-  imports: [],
   template: `
     <header>
-      <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+      <nav class="bg-white border-gray-200 px-4 py-2.5">
         <div
-          class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
+          class="flex flex-wrap justify-between items-center mx-auto max-w-[1080px]"
         >
           <a href="#" class="flex items-center">
           <span
@@ -44,7 +43,7 @@ import { AuthService } from '@auth0/auth0-angular';
                 <a
                   href="#"
                   class="flex items-center py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0"
-                  >History</a
+                  >Conversations</a
                 >
               </li>
               <li>

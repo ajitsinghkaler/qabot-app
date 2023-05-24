@@ -6,7 +6,7 @@ import { ChatBoxComponent } from '../../components/chat-box/chat-box.component';
   standalone: true,
   template: `
   <div class="mx-auto container"> 
-  <qabot-app-chat-box class="border mx-4 rounded-lg border-gray-300"/> 
+  <qabot-app-chat-box class="border px-4 rounded-lg border-gray-300"/> 
   </div>`,
   styles: [
     `

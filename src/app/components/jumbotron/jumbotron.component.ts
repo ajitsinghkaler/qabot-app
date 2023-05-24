@@ -4,7 +4,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'qabot-app-jumbotron',
   standalone: true,
-  imports: [],
   template: `
 <section class="py-24 flex items-center min-h-[90vh] justify-center bg-white">
   <div class="mx-auto max-w-[43rem]">
@@ -16,7 +15,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
     <div class="mt-6 flex items-center justify-center gap-4">
       <a href="#" class="transform rounded-md bg-blue-700 px-5 py-3 font-medium text-white transition-colors hover:bg-blue-800">Upload a Document</a>
-      <a href="#" class="transform rounded-md border border-slate-200 px-5 py-3 font-medium text-slate-900 transition-colors hover:bg-slate-50"> Request a demo </a>
+      <!-- <a href="#" class="transform rounded-md border border-slate-200 px-5 py-3 font-medium text-slate-900 transition-colors hover:bg-slate-50"> Request a demo </a> -->
     </div>
   </div>
 </section>
