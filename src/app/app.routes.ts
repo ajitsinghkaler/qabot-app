@@ -5,17 +5,17 @@ export const appRoutes: Route[] = [
   {
     path: '',
     loadComponent: () =>
+      import('./pages/home-page/home-page.component').then(
+        (m) => m.HomePageComponent
+      ),
+  },
+  {
+    path: '',
+    loadComponent: () =>
       import('./components/logout-shell/logout-shell.component').then(
         (m) => m.LogoutShellComponent
       ),
     children: [
-      {
-        path: '',
-        loadComponent: () =>
-          import('./pages/home-page/home-page.component').then(
-            (m) => m.HomePageComponent
-          ),
-      },
       {
         path: 'pricing',
         loadComponent: () =>
@@ -23,6 +23,18 @@ export const appRoutes: Route[] = [
             (m) => m.PricingComponent
           ),
       },
+      {
+        path: 'privacy-policy',
+        loadComponent: () =>
+          import('./pages/privacy-policy/privacy-policy.component').then(
+            (m) => m.PrivacyPolicyComponent
+          ),
+      },
+      {
+        path: "contact",
+        loadComponent: () =>
+          import("./pages/contact/contact.component").then((m) => m.ContactComponent),
+      }
     ],
   },
   {
@@ -34,7 +46,7 @@ export const appRoutes: Route[] = [
     canActivateChild: [AuthGuard],
     children: [
       {
-        path: '',
+        path: 'document',
         loadComponent: () =>
           import('./pages/chatbot-page/chatbot-page.component').then(
             (m) => m.ChatbotPageComponent
