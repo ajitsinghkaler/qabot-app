@@ -1,6 +1,5 @@
 import { DatePipe, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { LetDirective } from '@rx-angular/template/let';
 import { HistoryListService } from './history-list.service';
 import { RouterLink } from '@angular/router';
 import { RxFor } from '@rx-angular/template/for';
@@ -12,9 +11,13 @@ import { fromNow } from 'src/app/utils/dateago';
   imports: [NgIf, RouterLink, RxFor, DatePipe],
   providers: [HistoryListService],
   template: `
-    <h2 class="text-slate-900 text-4xl font-bold sm:text-5xl sm:mt-10 mt-8 sm:mb-8 mb-4 ">Conversations</h2>
+    <h2
+      class="text-slate-900 text-4xl font-bold sm:text-5xl sm:mt-10 mt-8 sm:mb-8 mb-4 "
+    >
+      Conversations
+    </h2>
     <div
-      routerLink="/chatbot/{{ history.id }}/{{history.title}}"
+      routerLink="/chatbot/{{ history.id }}/{{ history.title }}"
       *rxFor="let history of historyList$; trackBy: 'id'; let count = count"
       class="flex justify-between border border-gray-200 rounded mx-auto shadow-md px-4 py-2 mb-4 bg-white hover:bg-sky-100 hover:text-sky-900 transition-all duration-300 ease-in-out"
     >

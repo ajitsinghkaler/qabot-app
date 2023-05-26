@@ -2,13 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ChatStore } from './chat.store';
-import { tapResponse } from '@ngrx/component-store';
-
-// interface ChatMessage {
-//   question: string;
-//   history: string;
-// }
 
 interface Answer {
   answer: string;
