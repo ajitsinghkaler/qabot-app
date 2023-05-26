@@ -120,7 +120,7 @@ import { tap } from 'rxjs';
         border-radius: 0.25rem;
       }
       .h-80 {
-        height: 90vh;
+        height: 84vh;
       }
     `,
   ],
