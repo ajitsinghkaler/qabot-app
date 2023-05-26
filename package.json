@@ -6,10 +6,10 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "dev:ssr": "ng run qabot-app:serve-ssr",
+    "dev:ssr": "nx run qabot-app:serve-ssr",
     "serve:ssr": "node dist/qabot-app/server/main.js",
-    "build:ssr": "ng build && ng run qabot-app:server",
-    "prerender": "ng run qabot-app:prerender"
+    "build:ssr": "nx build && nx run qabot-app:server",
+    "prerender": "nx run qabot-app:prerender"
   },
   "private": true,
   "dependencies": {

@@ -1,11 +1,7 @@
 import { ApplicationConfig } from '@angular/core';
 import { CsrfStore } from '../app/store/csrf.store';
 import { APP_INITIALIZER, importProvidersFrom } from '@angular/core';
-import {
-  AuthHttpInterceptor,
-  AuthModule,
-  AuthService,
-} from '@auth0/auth0-angular';
+import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
 import { environment } from '../environments/environment';
 import {
   HTTP_INTERCEPTORS,
@@ -41,7 +37,7 @@ export const appConfig: ApplicationConfig = {
     {
       provide: APP_INITIALIZER,
       useFactory: initializeCsrfFactory,
-      deps: [HttpClient, CsrfStore, AuthService],
+      deps: [HttpClient, CsrfStore],
       multi: true,
     },
     provideHttpClient(
