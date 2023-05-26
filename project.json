@@ -8,19 +8,28 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/qabot-app",
+        "outputPath": "dist/qabot-app/browser",
         "index": "./src/index.html",
         "main": "./src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "./tsconfig.app.json",
-        "assets": ["./src/favicon.ico", "./src/assets"],
-        "styles": ["./src/styles.scss"],
+        "assets": [
+          "./src/favicon.ico",
+          "./src/assets"
+        ],
+        "styles": [
+          "./src/styles.scss"
+        ],
         "scripts": [],
         "allowedCommonJsDependencies": [
           "dayjs"
-       ]
+        ]
       },
       "configurations": {
         "production": {
@@ -75,14 +84,21 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["./src/**/*.ts", "./src/**/*.html"]
+        "lintFilePatterns": [
+          "./src/**/*.ts",
+          "./src/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectName}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectName}"
+      ],
       "options": {
         "jestConfig": "jest.config.ts",
         "passWithNoTests": true
@@ -99,6 +115,66 @@
       "options": {
         "buildTarget": "qabot-app:build"
       }
+    },
+    "server": {
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/qabot-app/server",
+        "main": "server.ts",
+        "tsConfig": "tsconfig.server.json"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "fileReplacements": [
+            {
+              "replace": "src/environments/environment.ts",
+              "with": "src/environments/environment.development.ts"
+            }
+          ],
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false,
+          "vendorChunk": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "executor": "@nguniversal/builders:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "qabot-app:build:development",
+          "serverTarget": "qabot-app:server:development"
+        },
+        "production": {
+          "browserTarget": "qabot-app:build:production",
+          "serverTarget": "qabot-app:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@nguniversal/builders:prerender",
+      "options": {
+        "routes": [
+          "/"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "qabot-app:build:production",
+          "serverTarget": "qabot-app:server:production"
+        },
+        "development": {
+          "browserTarget": "qabot-app:build:development",
+          "serverTarget": "qabot-app:server:development"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   }
 }

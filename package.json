@@ -5,23 +5,31 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "dev:ssr": "ng run qabot-app:serve-ssr",
+    "serve:ssr": "node dist/qabot-app/server/main.js",
+    "build:ssr": "ng build && ng run qabot-app:server",
+    "prerender": "ng run qabot-app:prerender"
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^16.0.3",
     "@angular/common": "16.0.3",
     "@angular/compiler": "16.0.3",
     "@angular/core": "16.0.3",
     "@angular/forms": "16.0.3",
     "@angular/platform-browser": "16.0.3",
     "@angular/platform-browser-dynamic": "16.0.3",
+    "@angular/platform-server": "16.0.3",
     "@angular/router": "16.0.3",
     "@auth0/auth0-angular": "^2.1.0",
     "@ngrx/component-store": "16.0.0",
+    "@nguniversal/express-engine": "^16.0.2",
     "@nx/angular": "16.2.2",
     "@rx-angular/cdk": "latest",
     "@rx-angular/template": "^15.2.0",
     "dayjs": "^1.11.7",
+    "express": "^4.15.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "0.13.0"
@@ -36,6 +44,7 @@
     "@angular/cli": "~16.0.0",
     "@angular/compiler-cli": "16.0.3",
     "@angular/language-service": "16.0.3",
+    "@nguniversal/builders": "^16.0.2",
     "@nx/cypress": "16.2.2",
     "@nx/eslint-plugin": "16.2.2",
     "@nx/jest": "16.2.2",
@@ -44,6 +53,7 @@
     "@nx/web": "16.2.2",
     "@nx/workspace": "16.2.2",
     "@schematics/angular": "16.0.3",
+    "@types/express": "^4.17.0",
     "@types/jest": "^29.4.0",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
@@ -66,4 +76,3 @@
     "typescript": "5.0.4"
   }
 }
-
